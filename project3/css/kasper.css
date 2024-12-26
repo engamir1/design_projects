@@ -1,0 +1,250 @@
+/* global rules */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+/* end global rules */
+/* start vars */
+:root {
+    --main-color: #18BFEF;
+    --secondary-color: #01463f;
+    --transparent-color: rgb(15 116 143 / 70%);
+}
+
+/* end vars */
+
+html {
+    scroll-behavior: smooth;
+    transition: 0.5s;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif, monospace;
+}
+
+ul {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.container {
+    padding: 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.active,
+.container li a:hover {
+    color: #18BFEF;
+    border-bottom: 1px solid var(--main-color);
+}
+
+
+/* small screen */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium screen */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* big screen */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+header {
+    /* to be above all elements we use position: absolute */
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+header .container::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(100% - 20px);
+    background-color: var(--secondary-color);
+    bottom: -1px;
+    border-bottom: 1px solid var(--main-color);
+
+}
+
+
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+
+}
+
+header .container nav ul {
+    display: flex;
+}
+
+header .container li a {
+    padding: 40px 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+header .container .logo img {
+    height: 40px;
+}
+
+nav .form {
+    border-left: 1px solid #fafafa;
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
+    position: relative;
+    font-size: 22px;
+    color: #fafafa;
+    padding: 10px;
+
+}
+
+
+
+/* Start Landing */
+.landing {
+    min-height: 100vh;
+    background-color: #1f2021;
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* add trancparency  */
+    background-color: rgb(0 0 0 / 60%);
+}
+
+.landing .text {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* عشان هيا هتاخد نص الشاشه بالعرض  */
+    width: 50%;
+    padding: 50px;
+    background-color: var(--transparent-color);
+    color: white;
+    justify-content: flex-end;
+}
+
+.landing .text .content {
+    max-width: 500px;
+}
+
+@media (max-width: 767px) {
+    .landing .text {
+        width: 100%;
+    }
+
+    .landing .text .content {
+        max-width: 100%;
+    }
+}
+
+.landing .text .content h2 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.landing .text .content p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.landing .change-background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+}
+
+@media (max-width: 767px) {
+    .landing .change-background {
+        display: none;
+    }
+}
+
+.landing .fa-angle-left {
+    left: 30px;
+}
+
+.landing .fa-angle-right {
+    right: 30px;
+}
+
+.landing .bullets {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: flex;
+}
+
+.landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.landing .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* End Landing */

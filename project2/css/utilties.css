@@ -1,0 +1,30 @@
+/* text styles */
+
+.primary-text {
+    color: #28a745;
+}
+
+.secondary-text {
+    color: #2a2af5;
+}
+
+.btn {
+
+    /* color: #fff; */
+    background-color: #28a745;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+
+
+}
+
+.content .btn:hover {
+
+    background-color: #025a16;
+    opacity: 0.8;
+
+}
+
